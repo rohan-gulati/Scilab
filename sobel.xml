@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xml:id="sobel" xml:lang="en_US"
+					xmlns="http://docbook.org/ns/docbook"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					xmlns:svg="http://www.w3.org/2000/svg"
+					xmlns:ns3="http://www.w3.org/1999/xhtml"
+					xmlns:mml="http://www.w3.org/1998/Math/MathML"
+					xmlns:db="http://docbook.org/ns/docbook">
+
+	<refnamediv>
+		<refname>sobel</refname>
+
+		<refpurpose>Calculates the first, second, third, or mixed image derivatives using an extended Sobel operator</refpurpose>
+	</refnamediv>
+
+	<refsynopsisdiv>
+		<title>Calling Sequence</title>
+
+		<synopsis>return_image = sobel(input_image, ddepth, dx, dy, ksize, scale, delta);</synopsis>
+	</refsynopsisdiv>
+	
+	<refsection>
+   		<title>Arguments</title>
+		<variablelist>
+			<varlistentry><term>input_image :</term>
+				<listitem><para>input image</para></listitem>
+			</varlistentry>
+			<varlistentry><term>ddepth  :</term>
+				<listitem><para>output image depth</para></listitem>
+			</varlistentry>
+			<varlistentry><term>dx :</term>
+				<listitem><para>order of the derivative x.</para></listitem>
+			</varlistentry>
+			<varlistentry><term>dy :</term>
+				<listitem><para>order of the derivative y</para></listitem>
+			</varlistentry>
+			<varlistentry><term>ksize :</term>
+				<listitem><para>size of the extended Sobel kernel; it must be 1, 3, 5, or 7.
+</para></listitem>
+			</varlistentry>
+			<varlistentry><term>scale :</term>
+				<listitem><para> optional scale factor for the computed derivative values; by default, no scaling is applied 
+</para></listitem>
+			</varlistentry>
+			<varlistentry><term>delta :</term>
+				<listitem><para>optional delta value that is added to the results prior to storing them in dst</para></listitem>
+			</varlistentry>
+		</variablelist>
+	</refsection>
+	
+	<refsection>
+		<title>Description</title>
+		<para>
+			In all cases except one, the ksize*ksize separable kernel is used to calculate the derivative. When ksize = 1 , the 3 * 1 or 1 * 3 kernel is used (that is, no Gaussian smoothing is done). ksize = 1 can only be used for the first or the second x- or y- derivatives.
+
+			There is also the special value ksize = CV_SCHARR (-1) that corresponds to the 3* Scharr filter that may give more accurate results than the 3*3 Sobel. The Scharr aperture is
+			<inlinemediaobject><imageobject><imagedata fileref = "pic15.png" align = "center"/></imageobject></inlinemediaobject>
+			for the x-derivative, or transposed for the y-derivative.
+
+			The function calculates an image derivative by convolving the image with the appropriate kernel:
+			<inlinemediaobject><imageobject><imagedata fileref = "pic16.png" align = "center"/></imageobject></inlinemediaobject>
+			The Sobel operators combine Gaussian smoothing and differentiation, so the result is more or less resistant to the noise. Most often, the function is called with ( xorder = 1, yorder = 0, ksize = 3) or ( xorder = 0, yorder = 1, ksize = 3) to calculate the first x- or y- image derivative. The first case corresponds to a kernel of:
+			<inlinemediaobject><imageobject><imagedata fileref = "pic17.png" align = "center"/></imageobject></inlinemediaobject>
+			The second case corresponds to a kernel of:
+			<inlinemediaobject><imageobject><imagedata fileref = "pic18.png" align = "center"/></imageobject></inlinemediaobject>
+
+
+
+
+		</para>
+	</refsection>
+
+	<refsection>
+		<title>Example</title>
+		<programlisting role="example"><![CDATA[
+							a = imread("/home/Pictures/img.jpg");
+							b=sobel(a, 0.7, 0.6, 0.6, 100, 3, 5);;
+							imshow(b);
+   		]]></programlisting>
+	</refsection>
+
+	<refsection>
+		<title>Authors</title>
+
+		<simplelist type="vert">
+			<member>Sukul Bagai</member>
+		</simplelist>
+	</refsection>
+</refentry>

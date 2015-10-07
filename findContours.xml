@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xml:id="findContours" xml:lang="en_US"
+					xmlns="http://docbook.org/ns/docbook"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					xmlns:svg="http://www.w3.org/2000/svg"
+					xmlns:ns3="http://www.w3.org/1999/xhtml"
+					xmlns:mml="http://www.w3.org/1998/Math/MathML"
+					xmlns:db="http://docbook.org/ns/docbook">
+
+	<refnamediv>
+		<refname>findContours</refname>
+
+		<refpurpose>Finds contours in a binary image.
+	</refpurpose>
+	</refnamediv>
+
+	<refsynopsisdiv>
+		<title>Calling Sequence</title>
+
+		<synopsis>fcontours = findcontours(input_image(after canny is applied on it), mode, method, point_x, point_y)</synopsis>
+	</refsynopsisdiv>
+	
+	<refsection>
+   		<title>Arguments</title>
+		<variablelist>
+			<varlistentry><term>input_image :</term>
+				<listitem><para>Image on which function is to be called.</para></listitem>
+			</varlistentry>
+
+			<varlistentry><term>mode :</term>
+				<listitem><para>Contour retrieval mode 
+				</para>
+		<simplelist type="vert">
+			<member>CV_RETR_EXTERNAL: retrieves only the extreme outer contours. It sets hierarchy[i][2]=hierarchy[i][3]=-1 for all the contours.</member>
+			<member>CV_RETR_LIST retrieves all of the contours without establishing any hierarchical relationships.</member>
+			<member>CV_RETR_CCOMP retrieves all of the contours and organizes them into a two-level hierarchy. At the top level, there are external boundaries of the components. At the second level, there are boundaries of the holes. If there is another contour inside a hole of a connected component, it is still put at the top level.</member>
+			<member>CV_RETR_TREE retrieves all of the contours and reconstructs a full hierarchy of nested contours.</member>
+		</simplelist>
+		</listitem>
+			
+			</varlistentry>
+			<varlistentry><term>method :</term>
+				<listitem><para>Contour approximation method :</para>
+				<simplelist type="vert">
+			<member>CV_CHAIN_APPROX_NONE stores absolutely all the contour points. That is, any 2 subsequent points (x1,y1) and (x2,y2) of the contour will be either horizontal, vertical or diagonal neighbors, that is, max(abs(x1-x2),abs(y2-y1))==1.</member>
+			<member>CV_CHAIN_APPROX_SIMPLE compresses horizontal, vertical, and diagonal segments and leaves only their end points. For example, an up-right rectangular contour is encoded with 4 points.</member>
+			<member>CV_CHAIN_APPROX_TC89_L1,CV_CHAIN_APPROX_TC89_KCOS applies one of the flavors of the Teh-Chin chain approximation algorithm</member>
+		</simplelist>
+		</listitem>
+			</varlistentry>
+			<varlistentry><term>point_x :</term>
+				<listitem><para>TODO</para></listitem>
+			</varlistentry>
+			<varlistentry><term>point_y :</term>
+				<listitem><para>TODO</para></listitem>
+		</variablelist>
+	</refsection>
+	
+	<refsection>
+		<title>Description</title>
+		<para>
+		The function retrieves contours from the binary image using the algorithm [Suzuki85]. The contours are a useful tool for shape analysis and object detection and recognition.		
+
+	</para>
+	</refsection>
+
+	<refsection>
+		<title>Example</title>
+		<programlisting role="example"><![CDATA[
+							a = imread("/home/Pictures/img.jpg");
+							c=canny(image, 2, 3, 0);
+							b=findcontours(c, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_NONE, 0, 0)
+							imshow(b);
+   		]]></programlisting>
+	</refsection>
+	<refsection>
+		<title>Authors</title>
+
+		<simplelist type="vert">
+			<member>Abhilasha Sancheti</member>
+			<member>Sukul Bagai</member>
+		</simplelist>
+	</refsection>
+</refentry>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xml:id="fillconvexpoly" xml:lang="en_US"
+					xmlns="http://docbook.org/ns/docbook"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					xmlns:svg="http://www.w3.org/2000/svg"
+					xmlns:ns3="http://www.w3.org/1999/xhtml"
+					xmlns:mml="http://www.w3.org/1998/Math/MathML"
+					xmlns:db="http://docbook.org/ns/docbook">
+
+	<refnamediv>
+		<refname>fillconvexpoly</refname>
+
+		<refpurpose>Fills a convex polygon.</refpurpose>
+	</refnamediv>
+
+	<refsynopsisdiv>
+		<title>Calling Sequence</title>
+
+		<synopsis>fillConvexpoly( image , points , r_value , g_value , b_value , linrtype,shift);</synopsis>
+	</refsynopsisdiv>
+	
+	<refsection>
+   		<title>Arguments</title>
+		<variablelist>
+			<varlistentry><term>image :</term>
+				<listitem><para>Image on which function is to be called.</para></listitem>
+			</varlistentry>
+			<varlistentry><term>points :</term>
+				<listitem><para>points</para></listitem>
+			</varlistentry>
+			<varlistentry><term>r_value :</term>
+				<listitem><para>Red Value </para></listitem>
+			</varlistentry>
+			<varlistentry><term>g_value :</term>
+				<listitem><para>Green value</para></listitem>
+			</varlistentry>
+			<varlistentry><term>b_value :</term>
+				<listitem><para>Blue value</para></listitem>
+			</varlistentry>
+			<varlistentry><term>linrtype :</term>
+				<listitem><para>Line Type</para></listitem>
+			</varlistentry>
+			<varlistentry><term>shift :</term>
+				<listitem><para>shift</para></listitem>
+			</varlistentry>
+		</variablelist>
+	</refsection>
+	
+	<refsection>
+		<title>Description</title>
+		<para>
+			The function fillConvexPoly draws a filled convex polygon. This function is much faster than the function fillPoly . It can fill not only convex polygons but any monotonic polygon without self-intersections, that is, a polygon whose contour intersects every horizontal line (scan line) twice at the most (though, its top-most and/or the bottom edge could be horizontal).
+		</para>
+	</refsection>
+
+	<refsection>
+		<title>Example</title>
+		<programlisting role="example"><![CDATA[
+							a = imread("/home/Pictures/img.jpg");
+							b=fillconvexpoly(a,points,4,0,0,0,8,0);
+							imshow(b);
+   		]]></programlisting>
+	</refsection>
+	<refsection>
+		<title>Authors</title>
+
+		<simplelist type="vert">
+			<member>Abhilasha Sancheti</member>
+			<member>Sukul Bagai</member>
+		</simplelist>
+	</refsection>
+</refentry>

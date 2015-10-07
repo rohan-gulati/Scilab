@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xml:id="laplacian" xml:lang="en_US"
+					xmlns="http://docbook.org/ns/docbook"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					xmlns:svg="http://www.w3.org/2000/svg"
+					xmlns:ns3="http://www.w3.org/1999/xhtml"
+					xmlns:mml="http://www.w3.org/1998/Math/MathML"
+					xmlns:db="http://docbook.org/ns/docbook">
+<refnamediv>
+		<refname>laplacian</refname>
+
+		<refpurpose>Calculates the Laplacian of an image.</refpurpose>
+	</refnamediv>
+
+	<refsynopsisdiv>
+		<title>Calling Sequence</title>
+		return_image = laplacian(input_image , depth , ksize , scale, delta);
+	</synopsis>
+	</refsynopsisdiv>
+	
+	<refsection>
+   		<title>Arguments</title>
+		<variablelist>
+			<varlistentry><term>input_image :</term>
+				<listitem><para>Image on which function is to be applied.</para></listitem>
+			</varlistentry>
+			<varlistentry><term>depth :</term>
+				<listitem><para>Desired depth of the destination image.
+			</para></listitem>
+			</varlistentry>
+			<varlistentry><term>ksize :</term>
+				<listitem><para>Aperture size used to compute the second-derivative filters.. The size must be positive and odd.
+		</para></listitem>
+			</varlistentry>
+			<varlistentry><term>scale :</term>
+				<listitem><para>A Optional scale factor for the computed Laplacian values. By default, no scaling is applied.
+		</para></listitem>
+			</varlistentry>
+				<varlistentry><term>delta :</term>
+				<listitem><para>Optional delta value that is added to the results prior to storing them in dst 
+		</para></listitem>
+			</varlistentry>
+	</refsection>
+	
+	<refsection>
+		<title>Description</title>
+		<para>
+			The function calculates the Laplacian of the source image by adding up the second x and y derivatives calculated using the Sobel operator:
+			<inlinemediaobject><imageobject><imagedata fileref = "pic9.png" align = "center"/></imageobject></inlinemediaobject>
+			This is done when ksize > 1 . When ksize == 1 , the Laplacian is computed by filtering the image with the following 3 \times 3 aperture
+			<inlinemediaobject><imageobject><imagedata fileref = "pic10.png" align = "center"/></imageobject></inlinemediaobject>
+
+		</para>
+	</refsection>
+
+	<refsection>
+		<title>Example</title>
+		<programlisting role="example"><![CDATA[
+							a = imread("/home/Pictures/img.jpg");
+							b=laplacian(a , 10 , 200 , 2.0, 0.6);
+   		]]></programlisting>
+	</refsection>
+
+	<refsection>
+		<title>Authors</title>
+		<simplelist type="vert">
+			<member>Sukul Bagai</member>
+		</simplelist>
+	</refsection>
+</refentry>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xml:id="getgaussiankernel" xml:lang="en_US"
+					xmlns="http://docbook.org/ns/docbook"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					xmlns:svg="http://www.w3.org/2000/svg"
+					xmlns:ns3="http://www.w3.org/1999/xhtml"
+					xmlns:mml="http://www.w3.org/1998/Math/MathML"
+					xmlns:db="http://docbook.org/ns/docbook">
+
+	<refnamediv>
+		<refname>getgaussiankernel</refname>
+
+		<refpurpose>Returns Gaussian filter coefficients.</refpurpose>
+	</refnamediv>
+
+	<refsynopsisdiv>
+		<title>Calling Sequence</title>
+
+		<synopsis>Mat getGaussianKernel(int ksize, double sigma, int ktype=CV_64F )</synopsis>
+	</refsynopsisdiv>
+	
+	<refsection>
+   		<title>Arguments</title>
+		<variablelist>
+			<varlistentry><term>ksize :</term>
+				<listitem><para>Aperture size. It should be odd and positive.</para></listitem>
+			</varlistentry>
+			<varlistentry><term>sigma :</term>
+				<listitem><para>Gaussian standard deviation. If it is non-positive, it is computed from ksize as sigma = 0.3*((ksize-1)*0.5 - 1) + 0.8 .</para></listitem>
+			</varlistentry>
+			<varlistentry><term>ktype :</term>
+				<listitem><para>Type of filter coefficients. It can be CV_32f or CV_64F . </para></listitem>
+			</varlistentry>
+		</variablelist>
+	</refsection>
+	
+	<refsection>
+		<title>Description</title>
+		<para>
+			The function computes and returns the ksize*1 size matrix of Gaussian filter coefficients:
+			<inlinemediaobject><imageobject><imagedata fileref = "pic4.png" align = "center"/></imageobject></inlinemediaobject>
+			where i=0..ksize-1 and alpha is the scale factor chosen so that .<inlinemediaobject><imageobject><imagedata fileref = "pic5.png" align = "center"/></imageobject></inlinemediaobject>
+		</para>
+	</refsection>
+
+	<refsection>
+		<title>Example</title>
+		<programlisting role="example"><![CDATA[
+							a = imread("/home/Pictures/img.jpg");
+							b=ggetGaussianKernel(5, 7.7, CV_64F )
+   		]]></programlisting>
+	</refsection>
+	<refsection>
+		<title>Authors</title>
+
+		<simplelist type="vert">
+			<member>Shubheksha Jalan</member>
+		</simplelist>
+	</refsection>
+</refentry>

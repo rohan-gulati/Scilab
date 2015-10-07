@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xml:id="puttext" xml:lang="en_US"
+					xmlns="http://docbook.org/ns/docbook"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					xmlns:svg="http://www.w3.org/2000/svg"
+					xmlns:ns3="http://www.w3.org/1999/xhtml"
+					xmlns:mml="http://www.w3.org/1998/Math/MathML"
+					xmlns:db="http://docbook.org/ns/docbook">
+<refnamediv>
+		<refname>puttext</refname>
+
+		<refpurpose>Draws a text string..
+</refpurpose>
+	</refnamediv>
+
+	<refsynopsisdiv>
+		<title>Calling Sequence</title>
+		return_image = puttext(image ,x1 ,y1 ,fontscale,r_value,g_value,b_value,text,fontface ,thickness,linetype,bottomleft(0/1));
+	</synopsis>
+	</refsynopsisdiv>
+	
+	<refsection>
+   		<title>Arguments</title>
+		<variablelist>
+			<varlistentry><term>input_image :</term>
+				<listitem><para>Image</para></listitem>
+			</varlistentry>
+			<varlistentry><term>x1 :</term>
+				<listitem><para>x coordinate of  point of bootom-left corner of the text string
+			</para></listitem>
+			</varlistentry>
+			<varlistentry><term>y1 :</term>
+				<listitem><para>y coordinate of point of bootom-left corner of the text string
+		</para></listitem>
+			</varlistentry>
+			<varlistentry><term>fontscale :</term>
+				<listitem><para>Font scale factor that is multiplied by the font-specific base size.
+		</para></listitem>
+			</varlistentry>
+				<varlistentry><term>r_value :</term>
+				<listitem><para>Red value
+		</para></listitem>
+				<varlistentry><term>g_value :</term>
+				<listitem><para>Green value.
+		</para></listitem>
+			</varlistentry>
+
+			</varlistentry>
+				<varlistentry><term>b_value :</term>
+				<listitem><para>Blue value.
+		</para></listitem>
+			</varlistentry>
+			</varlistentry>
+				<varlistentry><term>text :</term>
+				<listitem><para>Text string to be drawn.
+		</para></listitem>
+			</varlistentry>
+			</varlistentry>
+				<varlistentry><term>fontface :</term>
+				<listitem><para>Font type. One of FONT_HERSHEY_SIMPLEX, FONT_HERSHEY_PLAIN, FONT_HERSHEY_DUPLEX, FONT_HERSHEY_COMPLEX, FONT_HERSHEY_TRIPLEX, FONT_HERSHEY_COMPLEX_SMALL, FONT_HERSHEY_SCRIPT_SIMPLEX, or FONT_HERSHEY_SCRIPT_COMPLEX, where each of the font ID’s can be combined with FONT_ITALIC to get the slanted letters.
+		</para></listitem>
+			</varlistentry>
+				<varlistentry><term>linetype :</term>
+				<listitem><para> Line type
+		</para></listitem>
+			</varlistentry>
+			</varlistentry>
+				<varlistentry><term>bottomleft :</term>
+				<listitem><para> When true, the image data origin is at the bottom-left corner. Otherwise, it is at the top-left corner.
+		</para></listitem>
+			</varlistentry>
+	</refsection>
+	
+	<refsection>
+		<title>Description</title>
+		<para>
+			The function putText renders the specified text string in the image. Symbols that cannot be rendered using the specified font are replaced by question marks.
+		</para>
+	</refsection>
+
+	<refsection>
+		<title>Example</title>
+		<programlisting role="example"><![CDATA[
+							a = imread("/home/Pictures/img.jpg");
+							b=puttext(a ,0 ,0 ,10,100,100,100,ABCD,FONT_HERSHEY_TRIPLEX ,8,8,1);
+   		]]></programlisting>
+	</refsection>
+
+	<refsection>
+		<title>Authors</title>
+		<simplelist type="vert">
+			<member>Abhilasha Sancheti</member>
+			<member>Sukul Bagai</member>
+		</simplelist>
+	</refsection>
+</refentry>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xml:id="rectangle" xml:lang="en_US"
+					xmlns="http://docbook.org/ns/docbook"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					xmlns:svg="http://www.w3.org/2000/svg"
+					xmlns:ns3="http://www.w3.org/1999/xhtml"
+					xmlns:mml="http://www.w3.org/1998/Math/MathML"
+					xmlns:db="http://docbook.org/ns/docbook">
+
+	<refnamediv>
+		<refname>rectangle</refname>
+
+		<refpurpose>Draws a simple, thick, or filled up-right rectangle</refpurpose>
+	</refnamediv>
+
+	<refsynopsisdiv>
+		<title>Calling Sequence</title>
+
+		<synopsis>return_image = rectangle(input_image , x_coordinate_of_point1 , y_coordinate_point1, x_coordinate_of_point2 , y_coordinate_point2 , r_value,g_value,b_value,thickness,linetype,shift);</synopsis>
+	</refsynopsisdiv>
+	
+	<refsection>
+   		<title>Arguments</title>
+		<variablelist>
+			<varlistentry><term>input_image :</term>
+				<listitem><para>the image matrix on which rectangle has to be drawn</para></listitem>
+			</varlistentry>
+			<varlistentry><term>x_coordinate_of_point1 :</term>
+				<listitem><para>x coordinate of point 1</para></listitem>
+			</varlistentry>
+			<varlistentry><term>y_coordinate_point1 :</term>
+				<listitem><para>x coordinate of point 1</para></listitem>
+			</varlistentry>
+			<varlistentry><term>x_coordinate_of_point2 :</term>
+				<listitem><para>x-coordinate of point opposite to point 1</para></listitem>
+			</varlistentry>
+			<varlistentry><term>y_coordinate_point2 :</term>
+				<listitem><para>y-coordinate of point opposite to point 1</para></listitem>
+			</varlistentry>
+		<varlistentry><term>r_value :</term>
+				<listitem><para>Red value
+		</para></listitem>
+				<varlistentry><term>g_value :</term>
+				<listitem><para>Green value.
+		</para></listitem>
+			</varlistentry>
+			</varlistentry>
+				<varlistentry><term>b_value :</term>
+				<listitem><para>Blue value.
+		</para></listitem>
+			</varlistentry>
+		</varlistentry>
+				<varlistentry><term>thickness :</term>
+				<listitem><para>Thickness of lines that make up the rectangle. Negative values, like CV_FILLED , mean that the function has to draw a filled rectangle.
+		</para></listitem>
+			</varlistentry>
+		</varlistentry>
+				<varlistentry><term>linetype :</term>
+				<listitem><para>Type of the line.
+		</para></listitem>
+			</varlistentry>
+		<varlistentry><term>shift :</term>
+				<listitem><para>Number of fractional bits in the point coordinates
+		</para></listitem>
+			</varlistentry>
+		</variablelist>
+	</refsection>
+	
+	<refsection>
+		<title>Description</title>
+		<para>
+			The function rectangle draws a rectangle outline or a filled rectangle whose two opposite corners are pt1 and pt2, or r.tl() and r.br()-Point(1,1).
+		</para>
+	</refsection>
+
+	<refsection>
+		<title>Example</title>
+		<programlisting role="example"><![CDATA[
+							a = imread("/home/Pictures/img.jpg");
+							b=rectangle(a,0,0,100,100,200,200,200,10,8,1.5);
+							imshow(b);
+   		]]></programlisting>
+	</refsection>
+
+	<refsection>
+		<title>Authors</title>
+
+		<simplelist type="vert">
+			<member>Sukul Bagai</member>
+		</simplelist>
+	</refsection>
+</refentry>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xml:id="convexhull" xml:lang="en_US"
+					xmlns="http://docbook.org/ns/docbook"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					xmlns:svg="http://www.w3.org/2000/svg"
+					xmlns:ns3="http://www.w3.org/1999/xhtml"
+					xmlns:mml="http://www.w3.org/1998/Math/MathML"
+					xmlns:db="http://docbook.org/ns/docbook">
+
+	<refnamediv>
+		<refname>convexhull</refname>
+
+		<refpurpose>Clips the line against the image rectangle</refpurpose>
+	</refnamediv>
+
+	<refsynopsisdiv>
+		<title>Calling Sequence</title>
+
+		<synopsis>hull = convexhull ( contour(vector<point>), clockwise(1/0) , returnpoints(1/0) </synopsis>
+	</refsynopsisdiv>
+	
+	<refsection>
+   		<title>Arguments</title>
+		<variablelist>
+			<varlistentry><term>width :</term>
+				<listitem><para>Width of rectange</para></listitem>
+			</varlistentry>
+			<varlistentry><term>height :</term>
+				<listitem><para>Height of rectangle</para></listitem>
+			</varlistentry>
+			<varlistentry><term>x1 :</term>
+				<listitem><para>x coordinate of first point</para></listitem>
+			</varlistentry>
+			<varlistentry><term>y1 :</term>
+				<listitem><para>y coordinate of first point</para></listitem>
+			</varlistentry>
+			<varlistentry><term>x2 :</term>
+				<listitem><para>x coordinate of second point</para></listitem>
+			</varlistentry>
+			<varlistentry><term>y2 :</term>
+			<listitem><para>y coordinate of second point</para></listitem>
+
+			</varlistentry>
+		</variablelist>
+	</refsection>
+	
+	<refsection>
+		<title>Description</title>
+		<para>
+		The function clipLine calculate a part of the line segment that is entirely within the specified rectangle.
+	</para>
+	</refsection>
+
+	<refsection>
+		<title>Example</title>
+		<programlisting role="example"><![CDATA[
+							a = imread("/home/Pictures/img.jpg");
+							b=clipline(100,100,0,0,50,50);
+							imshow(b);
+   		]]></programlisting>
+	</refsection>
+
+	<refsection>
+		<title>Authors</title>
+
+		<simplelist type="vert">
+			<member>Abhilasha Sancheti</member>
+			<member>Sukul Bagai</member>
+		</simplelist>
+	</refsection>
+</refentry>

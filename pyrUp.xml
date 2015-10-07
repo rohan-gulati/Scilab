@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xml:id="pyrUp" xml:lang="en_US"
+					xmlns="http://docbook.org/ns/docbook"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					xmlns:svg="http://www.w3.org/2000/svg"
+					xmlns:ns3="http://www.w3.org/1999/xhtml"
+					xmlns:mml="http://www.w3.org/1998/Math/MathML"
+					xmlns:db="http://docbook.org/ns/docbook">
+<refnamediv>
+		<refname>pyrUp</refname>
+
+		<refpurpose>Upsamples an image and then blurs it
+</refpurpose>
+	</refnamediv>
+
+	<refsynopsisdiv>
+		<title>Calling Sequence</title>
+		return_image = pyrUp(input_image, dstsize_width, distsize_height, border);
+	</synopsis>
+	</refsynopsisdiv>
+	
+	<refsection>
+   		<title>Arguments</title>
+		<variablelist>
+			<varlistentry><term>input_image :</term>
+				<listitem><para>Image</para></listitem>
+			</varlistentry>
+			<varlistentry><term>dstsize_width :</term>
+				<listitem><para>width of the output image
+			</para></listitem>
+			</varlistentry>
+			<varlistentry><term>distsize_height :</term>
+				<listitem><para>height of the output image
+		</para></listitem>
+			</varlistentry>
+			<varlistentry><term>border :</term>
+				<listitem><para>Border type.
+		</para></listitem>
+			</varlistentry>
+	</refsection>
+	
+	<refsection>
+		<title>Description</title>
+		<para>
+			By default, size of the output image is computed as Size(src.cols*2, (src.rows*2), but in any case, the following conditions should be satisfied:
+			<inlinemediaobject><imageobject><imagedata fileref = "pic13.png" align = "center"/></imageobject></inlinemediaobject>
+			The function performs the upsampling step of the Gaussian pyramid construction, though it can actually be used to construct the Laplacian pyramid. First, it upsamples the source image by injecting even zero rows and columns and then convolves the result with the same kernel as in pyrDown() multiplied by 4.
+		</para>
+	</refsection>
+	<refsection>
+		<title>Example</title>
+		<programlisting role="example"><![CDATA[
+							a = imread("/home/Pictures/img.jpg");
+							b=pyrUp(a, 100, 100, 1);
+   		]]></programlisting>
+	</refsection>
+
+	<refsection>
+		<title>Authors</title>
+		<simplelist type="vert">
+			<member>Sukul Bagai</member>
+		</simplelist>
+	</refsection>
+</refentry>
