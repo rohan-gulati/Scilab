@@ -49,10 +49,10 @@
 		</listitem>
 			</varlistentry>
 			<varlistentry><term>point_x :</term>
-				<listitem><para>TODO</para></listitem>
+				<listitem><para>x coordinate</para></listitem>
 			</varlistentry>
 			<varlistentry><term>point_y :</term>
-				<listitem><para>TODO</para></listitem>
+				<listitem><para>y coordinate</para></listitem>
 		</variablelist>
 	</refsection>
 	

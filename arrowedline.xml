@@ -25,28 +25,42 @@
 			<varlistentry><term>img :</term>
 				<listitem><para>Image</para></listitem>
 			</varlistentry>
-			<varlistentry><term>pt1 :</term>
-				<listitem><para>The point the arrow starts from</para></listitem>
+			<varlistentry><term>x1 :</term>
+				<listitem><para>X coordinate of the point the arrow starts from</para></listitem>
 			</varlistentry>
-			<varlistentry><term>pt2 :</term>
-				<listitem><para>The point the arrow points to.</para></listitem>
+			<varlistentry><term>y1 :</term>
+				<listitem><para>Y coordinate of the point the arrow starts from</para></listitem>
 			</varlistentry>
-			<varlistentry><term>color :</term>
-				<listitem><para>Line color</para></listitem>
+			<varlistentry><term>x2 :</term>
+				<listitem><para>X coordinate of the point the arrow points to</para></listitem>
+			</varlistentry>
+			<varlistentry><term>y2 :</term>
+				<listitem><para>Y coordinate of the point the arrow points to</para></listitem>
+			</varlistentry>
+			<varlistentry><term>r_value :</term>
+				<listitem><para>R value of colour</para></listitem>
+			</varlistentry>
+			<varlistentry><term>g_value :</term>
+				<listitem><para>G value of colour</para></listitem>
+			</varlistentry>
+			<varlistentry><term>b_value :</term>
+				<listitem><para>B value of colour</para></listitem>
 			</varlistentry>
 			<varlistentry><term>thickness :</term>
 				<listitem><para>Line thickness</para></listitem>
 			</varlistentry>
-			<varlistentry><term>Type of the line:</term>
+			<varlistentry><term>linetype:</term>
 			<simplelist type="vert">
 			<member>8 (or omitted) - 8-connected line.</member>
 			<member>4 - 4-connected line.</member>
 			<member>CV_AA - antialiased line..</member>
-			<member>shift – Number of fractional bits in the point coordinates</member>
-			<member>tipLength – The length of the arrow tip in relation to the arrow length
-			</member>
-
 		</simplelist>
+			</varlistentry>
+			<varlistentry><term>shift :</term>
+				<listitem><para>Number of fractional bits in the point coordinates</para></listitem>
+			</varlistentry>
+			<varlistentry><term>tipLength :</term>
+				<listitem><para>The length of the arrow tip in relation to the arrow length</para></listitem>
 			</varlistentry>
 		</variablelist>
 	</refsection>

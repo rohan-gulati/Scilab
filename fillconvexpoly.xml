@@ -25,8 +25,8 @@
 			<varlistentry><term>image :</term>
 				<listitem><para>Image on which function is to be called.</para></listitem>
 			</varlistentry>
-			<varlistentry><term>points :</term>
-				<listitem><para>points</para></listitem>
+			<varlistentry><term>npts :</term>
+				<listitem><para>the number of points</para></listitem>
 			</varlistentry>
 			<varlistentry><term>r_value :</term>
 				<listitem><para>Red Value </para></listitem>
@@ -37,11 +37,11 @@
 			<varlistentry><term>b_value :</term>
 				<listitem><para>Blue value</para></listitem>
 			</varlistentry>
-			<varlistentry><term>linrtype :</term>
+			<varlistentry><term>linetype :</term>
 				<listitem><para>Line Type</para></listitem>
 			</varlistentry>
 			<varlistentry><term>shift :</term>
-				<listitem><para>shift</para></listitem>
+				<listitem><para>Number of fractional bits in the vertex coordinates</para></listitem>
 			</varlistentry>
 		</variablelist>
 	</refsection>

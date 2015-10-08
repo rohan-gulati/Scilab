@@ -15,15 +15,18 @@
 
 	<refsynopsisdiv>
 		<title>Calling Sequence</title>
-		Mat getRotationMatrix2D(Point2f center, double angle, double scale)
+		Mat getRotationMatrix2D(double centerX,double centerY, double angle, double scale)
 	</synopsis>
 	</refsynopsisdiv>
 	
 	<refsection>
    		<title>Arguments</title>
 		<variablelist>
-			<varlistentry><term>center :</term>
-				<listitem><para>Center of the rotation in the source image.</para></listitem>
+			<varlistentry><term>centerX :</term>
+				<listitem><para>x coordinate of the center of the rotation in the source image.</para></listitem>
+			</varlistentry>
+			<varlistentry><term>centerY :</term>
+				<listitem><para>y coordinate of the center of the rotation in the source image.</para></listitem>
 			</varlistentry>
 			<varlistentry><term>angle :</term>
 				<listitem><para>Rotation angle in degrees. Positive values mean counter-clockwise rotation (the coordinate origin is assumed to be the top-left corner).
@@ -50,7 +53,7 @@
 		<title>Example</title>
 		<programlisting role="example"><![CDATA[
 							a = imread("/home/Pictures/img.jpg");
-							b=getRotationMatrix2D(Point2f center, 8.8, 2.0)
+							b=getRotationMatrix2D(0,0,8.8, 2.0)
 							imshow(b);
    		]]></programlisting>
 	</refsection>

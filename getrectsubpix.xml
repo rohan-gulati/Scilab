@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xml:id="getrectsubpix" xml:lang="en_US"
+					xmlns="http://docbook.org/ns/docbook"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					xmlns:svg="http://www.w3.org/2000/svg"
+					xmlns:ns3="http://www.w3.org/1999/xhtml"
+					xmlns:mml="http://www.w3.org/1998/Math/MathML"
+					xmlns:db="http://docbook.org/ns/docbook">
+
+	<refnamediv>
+		<refname>getrectsubpix</refname>
+
+		<refpurpose>Fills a convex polygon.</refpurpose>
+	</refnamediv>
+
+	<refsynopsisdiv>
+		<title>Calling Sequence</title>
+
+		<synopsis>getRectSubPix(InputArray image, int alpha,int beta, Point2f center, OutputArray patch, int patchType=-1)</synopsis>
+	</refsynopsisdiv>
+	
+	<refsection>
+   		<title>Arguments</title>
+		<variablelist>
+			<varlistentry><term>image :</term>
+				<listitem><para>Image on which function is to be called.</para></listitem>
+			</varlistentry>
+			<varlistentry><term>alpha :</term>
+				<listitem><para>first value of size</para></listitem>
+			</varlistentry>
+			<varlistentry><term>beta :</term>
+				<listitem><para>second value of size. </para></listitem>
+			</varlistentry>
+			<varlistentry><term>centerX :</term>
+				<listitem><para>x coordinate of center. </para></listitem>
+			</varlistentry>
+			<varlistentry><term>centerY :</term>
+				<listitem><para>y coordinate of center </para></listitem>
+			</varlistentry>
+			<varlistentry><term>patchType :</term>
+				<listitem><para>Depth of the extracted pixels. </para></listitem>
+			</varlistentry>
+		</variablelist>
+	</refsection>
+	
+	<refsection>
+		<title>Description</title>
+		<para>
+			The function getRectSubPix extracts pixels from src :
+			<inlinemediaobject><imageobject><imagedata fileref = "pic1.png" align = "center"/></imageobject></inlinemediaobject>
+			where the values of the pixels at non-integer coordinates are retrieved using bilinear interpolation. Every channel of multi-channel images is processed independently. While the center of the rectangle must be inside the image, parts of the rectangle may be outside. In this case, the replication border mode (see borderInterpolate() ) is used to extrapolate the pixel values outside of the image.
+		</para>
+	</refsection>
+
+	<refsection>
+		<title>Example</title>
+		<programlisting role="example"><![CDATA[
+							a = imread("/home/Pictures/img.jpg");
+							b=getRectSubPix(a, ,10, 10, 0,0, int patchType=-1 );
+   		]]></programlisting>
+	</refsection>
+	<refsection>
+		<title>Authors</title>
+
+		<simplelist type="vert">
+			<member>Shubheksha Jalan</member>
+		</simplelist>
+	</refsection>
+</refentry>
