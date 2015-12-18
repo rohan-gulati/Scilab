@@ -1,4 +1,3 @@
-# Scilab
-Help files for Scilab Image Processing Toolbox.
+# Scilab IPT
+Contributions to Scilab Image Processing Toolbox, under development at FOSSEE, IIT Bombay.
 
--FOSSEE, IIT Bombay
