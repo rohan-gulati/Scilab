@@ -1,2 +1,2 @@
 # Scilab
-Image processing boxroom for scilab.
+Help files for Scilab Image Processing Toolbox under development at FOSSEE, IIT Bombay.
