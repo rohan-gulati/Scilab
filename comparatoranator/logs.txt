@@ -1,0 +1,21 @@
+
+
+Nothing to compare for scilab  img = imread('sample_images/trivial/10r.png'); imgH = size(img, 1); imgW = size(img, 2); and matlab  img = imread('sample_images/trivial/10r.png'); imgH = size(img, 1); imgW = size(img, 2);.
+
+Mismatch for scilab   ans=imcrop(img, 0, 0, ceil(imgW/2.5), ceil(imgH/2)); and matlab   ans=imcrop(img, [0, 0, ceil(imgW/2.5), ceil(imgH/2)]);
+
+Mismatch for scilab   ans=imcrop(img, ceil(imgW/4), ceil(imgH/4), ceil(imgW/2), ceil(imgH/2)); and matlab   ans=imcrop(img, [ceil(imgW/4), ceil(imgW/4), ceil(imgW/2), ceil(imgH/2)]);
+
+Nothing to compare for scilab   ans=blur(img, 5, 5, 1, 1); and matlab   ans=blur(img, 5, 5, 1, 1);.
+
+Nothing to compare for scilab   ans=arrowedline(ceil(imgW/4), ceil(imgH/4), ceil(imgW/2), ceil(imgH/2), 2, 2, 2, 2, 2, 2, 2, 2); and matlab   ans=arrowedline(ceil(imgW/4), ceil(imgH/4), ceil(imgW/2), ceil(imgH/2), 2, 2, 2, 2, 2, 2, 2, 2);.
+
+Nothing to compare for scilab   ans=canny(img, 2, 2, 2, 2); and matlab   ans=canny(img, 2, 2, 2, 2);.
+
+Mismatch for scilab   ans = imguidedfilter(img); and matlab   ans = imguidedfilter(img);
+
+Nothing to compare for scilab   ans = imgaussfilt3(img); and matlab   ans = imgaussfilt3(img);.
+
+Nothing to compare for scilab   ans = imgaussfilt3(img, 1); and matlab   ans = imgaussfilt3(img, 1);.
+
+Nothing to compare for scilab   ans = multithresh(img); and matlab   ans = multithresh(img);.
